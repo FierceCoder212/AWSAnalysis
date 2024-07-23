@@ -24,9 +24,7 @@ namespace RAS.Service.Tests.Concrete
         public void Setup()
         {
             systemSerial = "080627";
-            //connectionString = "SERVER=10.26.97.160;PORT=3306;DATABASE=pmc" + systemSerial + ";UID=localanalyst;PASSWORD=pit.Mud-1972;Allow User Variables=true";
-            connectionString = "Server=13.56.143.245;Database=pmc" + systemSerial + ";User Id=localanalyst;Password=UpWork24;Trusted_Connection=False;Integrated Security=False;Encrypt=False;persist security info=True;";
-            connectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
+            connectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
             forecast = new ForecastRepository(connectionString);
             startTime = Convert.ToDateTime("2021-04-08 00:00:00");
             stopTime = Convert.ToDateTime("2021-04-08 00:00:00");
@@ -38,7 +36,7 @@ namespace RAS.Service.Tests.Concrete
             // Arrange
 
             // Act
-            DataTable result = forecast.GetForecastData(Convert.ToDateTime("2021-04-08 00:00:00"), Convert.ToDateTime("2021-04-09 00:00:00"));
+            DataTable result = forecast.GetForecastData(startTime, stopTime);
 
             // Assert
             Assert.That(result, Is.Not.Null);
@@ -51,7 +49,7 @@ namespace RAS.Service.Tests.Concrete
             // Arrange
 
             // Act
-            DataTable result = forecast.GetForecastIpuData(Convert.ToDateTime("2021-04-08 00:00:00"), Convert.ToDateTime("2021-04-09 00:00:00"));
+            DataTable result = forecast.GetForecastIpuData(startTime, stopTime);
 
             // Assert
             Assert.That(result, Is.Not.Null);

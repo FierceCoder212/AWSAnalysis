@@ -199,7 +199,7 @@ namespace RemoteAnalyst.Repository.Repositories
 
             try
             {
-                using (ISession session = NHibernateHelper.OpenSession())
+                using (ISession session = NHibernateHelper.OpenSessionCustom(_connectionString))
                 {
                     RDSRetentionDays = session.QueryOver<Models.System>()
                         .Where(x => x.SystemSerial == systemSerial)

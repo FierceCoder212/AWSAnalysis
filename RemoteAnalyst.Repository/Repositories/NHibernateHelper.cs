@@ -85,7 +85,7 @@ namespace RemoteAnalyst.Repository.Repositories
                     configuration.Configure("../../Hibernate.cfg/nhibernate.cfg.xml", "MySql");
 #else
                     //configuration.Configure("../../../RemoteAnalyst.Repository/Hibernate.cfg/nhibernate.cfg.xml", _dialect);
-                    configuration.Configure("C:\\Users\\ABDULLAH\\Downloads\\Compressed\\Project 10_2\\Project 10\\RemoteAnalyst.Repository\\Hibernate.cfg\\nhibernate.cfg.xml", _dialect);
+                    configuration.Configure("RemoteAnalyst.Repository/Hibernate.cfg/nhibernate.cfg.xml", _dialect);
 #endif
                     //if (_className != "")
                     //    configuration.AddAssembly(Type.GetType(_className).Assembly);
@@ -248,7 +248,7 @@ namespace RemoteAnalyst.Repository.Repositories
         public static void CreateTables(string connectionString, Assembly assembly)
         {
             configuration = new NHibernate.Cfg.Configuration();
-            configuration.Configure("C:\\Users\\ABDULLAH\\Downloads\\Compressed\\Project 10_2\\Project 10\\RemoteAnalyst.Repository\\Hibernate.cfg\\nhibernate.cfg.xml", _dialect);
+            configuration.Configure("RemoteAnalyst.Repository/Hibernate.cfg/nhibernate.cfg.xml", _dialect);
             configuration.AddAssembly(assembly);
             configuration.SetProperty("connection.connection_string", connectionString);
             Fluently.Configure(configuration)

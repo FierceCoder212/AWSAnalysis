@@ -27,16 +27,9 @@ namespace RAS.Service.Tests.Concrete
         public void Setup()
         {
             systemSerial = "080627";
-            /*
-            profileConnectionString = "SERVER=127.0.0.1,3306;PORT=3306;DATABASE=nhibernate;UID=root;PASSWORD=asd@123;Allow User Variables=true";
-            connectionString = "SERVER=127.0.0.1,3306;PORT=3306;DATABASE=nhibernate" + systemSerial + ";UID=root;PASSWORD=asd@123;Allow User Variables=true";
-            testConnectionString = "SERVER=127.0.0.1,3306;PORT=3306;DATABASE=pmctest;UID=root;PASSWORD=asd@123;Allow User Variables=true";
-            */
-            var mySql = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
-            var msSql = "Data Source=DESKTOP-NTAS7MC\\SQLEXPRESS;Initial Catalog=LocalPMC;Integrated Security=True;";
-            profileConnectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
-            connectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
-            testConnectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
+            profileConnectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
+            connectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
+            testConnectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
 
             batch = new BatchRepository(connectionString, Log, true);
             batchProfile = new BatchRepository(profileConnectionString, Log, true);
@@ -75,7 +68,7 @@ namespace RAS.Service.Tests.Concrete
         public void Test_Batch_GetBatchInformationBySystemAndBatch()
         {
             // Arrange
-            string batchSequenceName = "Olga test batch";
+            string batchSequenceName = "BATNAME";
 
             // Act
             DataTable result = batch.GetBatchInformationByName(batchSequenceName);
@@ -102,7 +95,7 @@ namespace RAS.Service.Tests.Concrete
         public void Test_Batch_GetProcessesTrendInformationByBatchId()
         {
             // Arrange
-            string batchSequenceName = "Olga test batch";
+            string batchSequenceName = "BATNAME";
 
             // Act
             DataTable result = batch.GetBatchInformationByName(batchSequenceName);
@@ -138,7 +131,7 @@ namespace RAS.Service.Tests.Concrete
                     DataDate = DateTime.Now.AddDays(-1)
                 }
             };
-            int batchSequenceProfileId = 20;
+            int batchSequenceProfileId = 1;
             // Act
             batch.InsertBatchTrendData(batchTrendList, batchSequenceProfileId);
 

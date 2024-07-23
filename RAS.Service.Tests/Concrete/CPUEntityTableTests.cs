@@ -25,13 +25,11 @@ namespace RAS.Service.Tests.Concrete
         public void Setup()
         {
             systemSerial = "080627";
-            //connectionString = "SERVER=10.26.97.160;PORT=3306;DATABASE=pmc" + systemSerial + ";UID=localanalyst;PASSWORD=pit.Mud-1972;Allow User Variables=true";
-            connectionString = "Server=13.56.143.245;Database=pmc" + systemSerial + ";User Id=localanalyst;Password=UpWork24;Trusted_Connection=False;Integrated Security=False;Encrypt=False;persist security info=True;";
-            connectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
+            connectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
             cpuEntityTable = new CPUEntityTable(connectionString);
             tableName = "080627_CPU_2024_3_29";
-            startTime = Convert.ToDateTime("2024-03-29 00:00:00");
-            stopTime = Convert.ToDateTime("2024-03-30 00:00:00");
+            startTime = Convert.ToDateTime("2023-09-15 23:00:00");
+            stopTime = Convert.ToDateTime("2023-09-15 23:00:00");
             interval = 900;
         }
 
@@ -84,7 +82,7 @@ namespace RAS.Service.Tests.Concrete
 
             // Act
             DataTable result = cpuEntityTable.GetAllCPUBusyAndQueue(cpuTables,
-                false, interval, startTime, stopTime);
+                false, interval, Convert.ToDateTime("2024-03-29 00:00:00"), Convert.ToDateTime("2024-03-29 00:15:00"));
 
             // Assert
             Assert.That(result, Is.Not.Null);
@@ -118,7 +116,7 @@ namespace RAS.Service.Tests.Concrete
             };
 
             // Act
-            DataTable result = cpuEntityTable.GetAllIPUBusyAndQueue(cpuTables, 1, interval, startTime, stopTime);
+            DataTable result = cpuEntityTable.GetAllIPUBusyAndQueue(cpuTables, 1, interval, Convert.ToDateTime("2024-03-29 00:00:00"), Convert.ToDateTime("2024-03-29 00:15:00"));
 
             // Assert
             Assert.That(result, Is.Not.Null);

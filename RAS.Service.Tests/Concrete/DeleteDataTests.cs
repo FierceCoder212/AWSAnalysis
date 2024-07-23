@@ -18,10 +18,8 @@ namespace RAS.Service.Tests.Concrete
         public void Setup()
         {
             systemSerial = "080627";
-            //connectionString = "SERVER=10.26.97.160;PORT=3306;DATABASE=pmc" + systemSerial + ";UID=localanalyst;PASSWORD=pit.Mud-1972;Allow User Variables=true";
-            connectionString = "Server=13.56.143.245;Database=pmc" + systemSerial + ";User Id=localanalyst;Password=UpWork24;Trusted_Connection=False;Integrated Security=False;Encrypt=False;persist security info=True;";
-            connectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
-            oldDate = Convert.ToDateTime("2024-03-28 00:00:00");
+            connectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
+            oldDate = Convert.ToDateTime("2021-09-15 23:00:00");
         }
 
         [Test]

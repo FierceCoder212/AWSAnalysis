@@ -6,7 +6,7 @@
     <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
     <property name="dialect">NHibernate.Dialect.MySQLDialect</property>
     <property name="connection.driver_class">NHibernate.Driver.MySqlConnector.MySqlConnectorDriver, NHibernate.Driver.MySqlConnector</property>
-    <property name="connection.connection_string">Server=10.26.97.160;DataBase=pmc;uid=localanalyst;pwd=pit.Mud-1972</property>
+    <property name="connection.connection_string">Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;</property>
     <property name="show_sql">true</property>
   </session-factory>
 

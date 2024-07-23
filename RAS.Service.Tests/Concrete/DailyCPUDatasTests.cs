@@ -19,11 +19,7 @@ namespace RAS.Service.Tests.Concrete
         [SetUp]
         public void Setup()
         {
-            systemSerial = "080627";
-            databaseName = "pmc" + systemSerial;
-            //connectionString = "SERVER=10.26.97.160;PORT=3306;DATABASE=pmc" + systemSerial + ";UID=localanalyst;PASSWORD=pit.Mud-1972;Allow User Variables=true";
-            connectionString = "Server=13.56.143.245;Database=pmc" + systemSerial + ";User Id=localanalyst;Password=UpWork24;Trusted_Connection=False;Integrated Security=False;Encrypt=False;persist security info=True;";
-            connectionString = "Server=127.0.0.1,3306;DataBase=nhibernate;uid=root;pwd=asd@123";
+            connectionString = "Server=13.56.143.245;Database=pmc080627;User Id=localanalyst;Password=UpWork24;";
             dailyCPUDatas = new DailyCPUDataRepository(connectionString);
         }
 
