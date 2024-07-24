@@ -50,7 +50,7 @@ namespace RAS.Service.Tests.Concrete
             // Arrange
 
             // Act
-            long result = currentTables.GetInterval(tableName);
+            long result = currentTables.GetInterval("080627_CPU_2024_3_23");
 
             // Assert
             Assert.That(result, Is.GreaterThan(0));
